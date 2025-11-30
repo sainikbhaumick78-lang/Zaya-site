@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Basic SEO + Meta -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Zaya — premium, modern women's wear blending traditional sarees and contemporary fusion. Sustainable fabrics, artisan tailoring, bold minimalist design.">
+  <meta name="author" content="Zaya">
+  <title>Zaya — Modern Ethnic & Fusion | Premium Women's Wear</title>
+
+  <!-- Open Graph (social) -->
+  <meta property="og:title" content="Zaya — Modern Ethnic & Fusion" />
+  <meta property="og:description" content="Premium sarees, blouses & fusion wear for the modern wardrobe. Crafted sustainably, styled boldly." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&q=60&fit=crop&w=1200&h=630" />
+
+  <!-- Favicon (simple emoji fallback) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪶</text></svg>">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Preconnect fonts (we use system stack but hint for speed if a user has Inter) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+</head>
+<body class="page">
+
+  <!-- Header / Nav -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Zaya — home">
+        <svg class="brand-mark" width="36" height="36" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 12c0-2.7 1.8-5 4.2-5 1.2 0 2.3.6 3 1.6.7-1 1.8-1.6 3-1.6C19.2 6 21 8.3 21 11v7H3v-6z" fill="currentColor"/>
+        </svg>
+        <span class="brand-name">Zaya</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#hero" data-target="hero">Home</a></li>
+          <li><a href="#collections" data-target="collections">Shop</a></li>
+          <li><a href="#about" data-target="about">About</a></li>
+          <li><a href="#lookbook" data-target="lookbook">Lookbook</a></li>
+          <li><a href="#testimonials" data-target="testimonials">Reviews</a></li>
+          <li><a href="#faq" data-target="faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        </button>
+        <button class="cta cta-outline" onclick="document.querySelector('#collections').scrollIntoView({behavior:'smooth'})">Shop</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav overlay -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <ul class="mobile-nav-list">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#collections">Shop</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#lookbook">Lookbook</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li class="mobile-cta"><button class="cta" onclick="document.querySelector('#collections').scrollIntoView({behavior:'smooth'})">Explore Collection</button></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <main>
+    <section id="hero" class="hero-section" aria-label="Main hero">
+      <div class="hero-media" role="img" aria-label="Model wearing Zaya collection" style="background-image: linear-gradient(160deg, rgba(15,15,15,0.45), rgba(0,0,0,0.25)), url('https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=1400&q=60')"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <h1 class="hero-title">Zaya</h1>
+          <p class="hero-sub">Timeless sarees • Modern silhouettes • Responsible fabrics</p>
+          <div class="hero-ctas">
+            <button class="cta" id="heroShop">Shop Now</button>
+            <button class="cta cta-secondary" onclick="document.querySelector('#lookbook').scrollIntoView({behavior:'smooth'})">View Lookbook</button>
+          </div>
+          <p class="hero-micro">New arrivals: lightweight tussar sarees, hand-stitched blouses, curated fusion sets.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Collections / Products -->
+    <section id="collections" class="collections-section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Featured Collections</h2>
+          <p class="muted">Curated picks — crafted for city life and celebrations.</p>
+        </header>
+
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="new">New Arrivals</button>
+          <button class="filter-btn" data-filter="best">Best Sellers</button>
+          <button class="filter-btn" data-filter="women">Women</button>
+          <button class="filter-btn" data-filter="fusion">Fusion</button>
+        </div>
+
+        <div class="product-grid" id="productGrid" aria-live="polite">
+          <!-- Product Card (repeat) -->
+          <article class="product-card" data-category="new women fusion" data-price="2499">
+            <figure class="product-figure">
+              <img src="https://images.unsplash.com/photo-1542060745-81b92c3baf6f?auto=format&fit=crop&w=800&q=60" alt="Ivory tussar saree with hand-stitched blouse">
+              <figcaption class="product-badge">New</figcaption>
+            </figure>
+            <div class="product-body">
+              <h3 class="product-title">Ivory Tussar Saree</h3>
+              <p class="product-sub">Lightweight weave — hand-stitched blouse</p>
+              <div class="product-row">
+                <span class="price">₹2,499</span>
+                <button class="icon-btn" aria-label="Add to wishlist">
+                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.5-9-7.2C1.2 9.9 4 6 7 6c1.5 0 3 .9 4 2.1C12 6.9 13.5 6 15 6c3 0 5.8 3.9 4 7.8C19 16.5 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="best women" data-price="1799">
+            <figure class="product-figure">
+              <img src="https://images.unsplash.com/photo-1520975698515-bd7b0a7b9d57?auto=format&fit=crop&w=800&q=60" alt="Pastel printed saree modern drape">
+              <figcaption class="product-badge">Best</figcaption>
+            </figure>
+            <div class="product-body">
+              <h3 class="product-title">Pastel Printed Saree</h3>
+              <p class="product-sub">Soft cotton — everyday elegance</p>
+              <div class="product-row">
+                <span class="price">₹1,799</span>
+                <button class="icon-btn" aria-label="Add to wishlist">
+                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.5-9-7.2C1.2 9.9 4 6 7 6c1.5 0 3 .9 4 2.1C12 6.9 13.5 6 15 6c3 0 5.8 3.9 4 7.8C19 16.5 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="new fusion" data-price="3299">
+            <figure class="product-figure">
+              <img src="https://images.unsplash.com/photo-1520975662416-2a7e3dc59f31?auto=format&fit=crop&w=800&q=60" alt="Modern fusion set with drape and jacket">
+              <figcaption class="product-badge">New</figcaption>
+            </figure>
+            <div class="product-body">
+              <h3 class="product-title">Drape + Jacket Set</h3>
+              <p class="product-sub">Contemporary fusion — easy wear</p>
+              <div class="product-row">
+                <span class="price">₹3,299</span>
+                <button class="icon-btn" aria-label="Add to wishlist">
+                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.5-9-7.2C1.2 9.9 4 6 7 6c1.5 0 3 .9 4 2.1C12 6.9 13.5 6 15 6c3 0 5.8 3.9 4 7.8C19 16.5 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="women best" data-price="1399">
+            <figure class="product-figure">
+              <img src="https://images.unsplash.com/photo-1542062703-4c8b9d0b6e4f?auto=format&fit=crop&w=800&q=60" alt="Silk blouse in deep maroon">
+              <figcaption class="product-badge">Top</figcaption>
+            </figure>
+            <div class="product-body">
+              <h3 class="product-title">Maroon Silk Blouse</h3>
+              <p class="product-sub">Tailored fit — artisan finish</p>
+              <div class="product-row">
+                <span class="price">₹1,399</span>
+                <button class="icon-btn" aria-label="Add to wishlist">
+                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.5-9-7.2C1.2 9.9 4 6 7 6c1.5 0 3 .9 4 2.1C12 6.9 13.5 6 15 6c3 0 5.8 3.9 4 7.8C19 16.5 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="fusion" data-price="2199">
+            <figure class="product-figure">
+              <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=800&q=60" alt="Cotton blend fusion kurta set">
+            </figure>
+            <div class="product-body">
+              <h3 class="product-title">Cotton Fusion Kurta Set</h3>
+              <p class="product-sub">Breezy, tailored, versatile</p>
+              <div class="product-row">
+                <span class="price">₹2,199</span>
+                <button class="icon-btn" aria-label="Add to wishlist">
+                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.5-9-7.2C1.2 9.9 4 6 7 6c1.5 0 3 .9 4 2.1C12 6.9 13.5 6 15 6c3 0 5.8 3.9 4 7.8C19 16.5 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="women new" data-price="999">
+            <figure class="product-figure">
+              <img src="https://images.unsplash.com/photo-1520975698884-43f1b7f5d6b7?auto=format&fit=crop&w=800&q=60" alt="Handblock printed blouse modern cut">
+            </figure>
+            <div class="product-body">
+              <h3 class="product-title">Printed Blouse — Handblock</h3>
+              <p class="product-sub">Artisan prints — refined silhouette</p>
+              <div class="product-row">
+                <span class="price">₹999</span>
+                <button class="icon-btn" aria-label="Add to wishlist">
+                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.5-9-7.2C1.2 9.9 4 6 7 6c1.5 0 3 .9 4 2.1C12 6.9 13.5 6 15 6c3 0 5.8 3.9 4 7.8C19 16.5 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="best fusion" data-price="2699">
+            <figure class="product-figure">
+              <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=60" alt="Structured bandhni jacket with saree">
+              <figcaption class="product-badge">Best</figcaption>
+            </figure>
+            <div class="product-body">
+              <h3 class="product-title">Bandhni Jacket + Saree</h3>
+              <p class="product-sub">Statement layer — handcrafted details</p>
+              <div class="product-row">
+                <span class="price">₹2,699</span>
+                <button class="icon-btn" aria-label="Add to wishlist">
+                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.5-9-7.2C1.2 9.9 4 6 7 6c1.5 0 3 .9 4 2.1C12 6.9 13.5 6 15 6c3 0 5.8 3.9 4 7.8C19 16.5 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Story / About -->
+    <section id="about" class="about-section">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <h2>Our Story</h2>
+          <p class="muted">Zaya began with a single idea: make heritage textiles feel at home in a modern wardrobe. We partner with small-weave artisans and use low-impact dyes to create garments you’ll live in for years.</p>
+          <ul class="highlights">
+            <li><strong>Sustainable Fabrics</strong> — Naturally dyed cotton and tussar blends.</li>
+            <li><strong>Premium Stitching</strong> — Tailored seams and reinforced hems for longevity.</li>
+            <li><strong>Artisan Partnerships</strong> — Fair pay and seasonal collaborations.</li>
+          </ul>
+          <p class="cta-line"><button class="cta cta-outline" onclick="document.querySelector('#collections').scrollIntoView({behavior:'smooth'})">Shop the Ethos</button></p>
+        </div>
+        <div class="about-media" aria-hidden="true" style="background-image: url('https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=900&q=60')"></div>
+      </div>
+    </section>
+
+    <!-- Lookbook / Gallery -->
+    <section id="lookbook" class="lookbook-section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Lookbook</h2>
+          <p class="muted">Real moments. Street style. Festive edits.</p>
+        </header>
+
+        <div class="gallery" id="gallery">
+          <!-- Masonry-style via CSS columns; each item clickable for lightbox -->
+          <figure class="gallery-item" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=900&q=60" alt="Model walking on city street wearing fusion silhouette">
+          </figure>
+          <figure class="gallery-item" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1520975911324-3c4c2a82c8f4?auto=format&fit=crop&w=900&q=60" alt="Women in pastel saree at a cafe">
+          </figure>
+          <figure class="gallery-item" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1520975662416-2a7e3dc59f31?auto=format&fit=crop&w=900&q=60" alt="Close up of hand-stitched blouse detail">
+          </figure>
+          <figure class="gallery-item" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1520975698515-bd7b0a7b9d57?auto=format&fit=crop&w=900&q=60" alt="Model posing in a silk saree">
+          </figure>
+          <figure class="gallery-item" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=60" alt="Jacket inspired fusion outfit portrait">
+          </figure>
+          <figure class="gallery-item" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1542060745-81b92c3baf6f?auto=format&fit=crop&w=900&q=60" alt="Flat lay of fabric and trims">
+          </figure>
+        </div>
+      </div>
+
+      <!-- Lightbox -->
+      <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <img class="lightbox-img" src="" alt="">
+        <p class="lightbox-caption"></p>
+      </div>
+    </section>
+
+    <!-- Testimonials / Social Proof -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="container">
+        <header class="section-header">
+          <h2>What customers say</h2>
+          <p class="muted">Real reviews from shoppers who returned for more.</p>
+        </header>
+
+        <div class="testimonials-grid">
+          <blockquote class="testimonial">
+            <div class="test-top">
+              <img class="avatar" src="https://images.unsplash.com/photo-1545996124-19f0cf1cb5b8?auto=format&fit=crop&w=80&q=60" alt="Avatar of Ananya">
+              <div>
+                <strong>Ananya R.</strong>
+                <div class="stars" aria-hidden="true">
+                  <span>★★★★★</span>
+                </div>
+              </div>
+            </div>
+            <p>Beautiful fabric and perfect tailoring. The saree drapes naturally and the blouse fit was spot on. Will buy again.</p>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <div class="test-top">
+              <img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=80&q=60" alt="Avatar of Meera">
+              <div>
+                <strong>Meera S.</strong>
+                <div class="stars" aria-hidden="true"><span>★★★★★</span></div>
+              </div>
+            </div>
+            <p>Fast delivery and thoughtful packaging. The fusion jacket is now my go-to for events.</p>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <div class="test-top">
+              <img class="avatar" src="https://images.unsplash.com/photo-1545996124-bb0b2ec4a2f8?auto=format&fit=crop&w=80&q=60" alt="Avatar of Ritika">
+              <div>
+                <strong>Ritika P.</strong>
+                <div class="stars" aria-hidden="true"><span>★★★★☆</span></div>
+              </div>
+            </div>
+            <p>Lovely prints. One blouse had a small stitch issue but customer support sorted it immediately.</p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter / Lead Capture -->
+    <section id="newsletter" class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-grid">
+          <div>
+            <h2>Join the Zaya Edit</h2>
+            <p class="muted">Insiders get seasonal drops, early access sales, and styling tips — once a month. No spam.</p>
+          </div>
+          <form id="newsletterForm" class="newsletter-form" novalidate>
+            <label for="email" class="sr-only">Email address</label>
+            <input id="email" name="email" type="email" placeholder="you@domain.com" required aria-required="true">
+            <button type="submit" class="cta">Subscribe</button>
+            <p class="small muted">By subscribing you agree to receive product updates. Unsubscribe anytime.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section id="faq" class="faq-section" aria-label="Frequently asked questions">
+      <div class="container">
+        <header class="section-header">
+          <h2>FAQ</h2>
+          <p class="muted">Quick answers to common questions.</p>
+        </header>
+
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <button class="accordion-toggle" aria-expanded="false">What is your return policy?</button>
+            <div class="accordion-panel">
+              <p>We accept returns within 14 days of delivery on unworn items with tags. Return shipping fees may apply.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-toggle" aria-expanded="false">Do you offer custom tailoring?</button>
+            <div class="accordion-panel">
+              <p>Yes. We offer tailoring for blouses and saree hems for select styles. Tailoring fees and timelines vary by item.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-toggle" aria-expanded="false">Which materials do you use?</button>
+            <div class="accordion-panel">
+              <p>Our core materials are tussar silk, cotton blends, and low-impact dyed fabrics. Each product page lists fabric content.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-toggle" aria-expanded="false">How long does shipping take?</button>
+            <div class="accordion-panel">
+              <p>Standard shipping across India is 3–7 business days. Express options available at checkout for an extra fee.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-toggle" aria-expanded="false">How do I care for my saree?</button>
+            <div class="accordion-panel">
+              <p>Hand wash or gentle machine cycle in cold water. Avoid bleach. Dry in shade to preserve color and fiber strength.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="brand small">
+          <svg class="brand-mark" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 12c0-2.7 1.8-5 4.2-5 1.2 0 2.3.6 3 1.6.7-1 1.8-1.6 3-1.6C19.2 6 21 8.3 21 11v7H3v-6z" fill="currentColor"/>
+          </svg>
+          <span class="brand-name">Zaya</span>
+        </a>
+        <small class="muted">Modern ethnic & fusion wear</small>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <ul>
+          <li><a href="#collections">Shop</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#policies">Policies</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram" class="social-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" fill="none" stroke-width="1.2"/><circle cx="12" cy="12" r="3" stroke="currentColor" fill="none" stroke-width="1.2"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="social-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.1C22 6.6 17.5 2 12 2S2 6.6 2 12.1c0 4.9 3.6 9 8.2 9.9v-7H7.5v-2.9h2.7V9.2c0-2.6 1.6-4 4-4 1.1 0 2.3.2 2.3.2v2.5h-1.3c-1.3 0-1.7.8-1.7 1.6v1.9h2.9l-.5 2.9h-2.4v7C18.4 21.1 22 16.9 22 12.1z" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="Pinterest" class="social-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7 2 4 6 4 9.5c0 2 .8 3.6 2.4 4.2.3.1.7.1.8-.2.1-.3.3-1 .4-1.4.1-.4 0-.7-.2-1-.5-.6-.9-1.6-.9-2.6 0-3 2.4-4.6 5.2-4.6 2.8 0 4.6 1.6 4.6 4 0 2.6-1.1 4.9-2.6 4.9-.7 0-1.2-.6-1 0 .2.6.6 1.9.7 2.1.2.4.8.6 1.4.4 2.3-.9 3.8-3.4 3.8-6.6C20 6 16 2 12 2z" fill="currentColor"/></svg>
+        </a>
+      </div>
+
+      <div class="footer-copy">
+        <small>© <span id="year"></span> Zaya. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js" defer></script>
+</body>
+</html>
